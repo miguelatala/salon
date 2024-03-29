@@ -47,14 +47,8 @@ CUT_STYLING(){
     CUSTOMER_ID=$($PSQL "SELECT customer_id FROM customers WHERE name = '$CUSTOMER_NAME'")
     INSERT_APPOINTMENT=$($PSQL "INSERT INTO appointments (customer_id, service_id, time) VALUES($CUSTOMER_ID, $SERVICE_ID_SELECTED, '$SERVICE_TIME')")
     NAME=$($PSQL "SELECT name FROM services WHERE service_id = $SERVICE_ID_SELECTED")
-    echo -e "\nI have put you down for a$NAME at $SERVICE_TIME, $CUSTOMER_NAME."
-    
-  fi 
-  
+    echo -e "\nI have put you down for a$NAME at $SERVICE_TIME, $CUSTOMER_NAME."   
+  fi   
 }
-
-
-
-
 
 MAIN_MENU
